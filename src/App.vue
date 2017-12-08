@@ -1,7 +1,8 @@
 <template>
   <div id="app"><br/>
   路由列表：<br/>
-  <router-link to='/'>Echarts</router-link><br/>
+  <router-link to='/UseQueryChartComp'>UseQueryChartComp：使用QueryChart组件</router-link><br/>
+  <router-link to='/'>QueryChart：正在改IEcharts成组件</router-link><br/>
   <router-link to='/iecharts'>IEcharts 原组件</router-link><br/>
   <router-link to='/hello'>hello页面</router-link><br/>
   <div>============以下是内容=============</div>

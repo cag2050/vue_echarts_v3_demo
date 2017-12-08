@@ -18,6 +18,11 @@ export default new Router({
             component: resolve => require(['../views/IEcharts'], resolve)
         },
         {
+            path: '/UseQueryChartComp',
+            name: '',
+            component: resolve => require(['../views/UseQueryChartComp'], resolve)
+        },
+        {
             path: '/',
             name: '',
             component: resolve => require(['../components/QueryChart'], resolve)
