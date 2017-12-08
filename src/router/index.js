@@ -5,16 +5,27 @@ import Hello from '@/components/Hello'
 Vue.use(Router)
 
 export default new Router({
-  routes: [
-    {
-      path: '/',
-      name: 'QueryChart',
-      component: resolve => require(['../components/QueryChart'], resolve)
-    },
-    {
-      path: '/hello',
-      name: 'Hello',
-      component: Hello
-    }
-  ]
+    mode: 'history',
+    routes: [
+        {
+            path: '/',
+            name: '',
+            component: resolve => require(['../components/QueryChart'], resolve)
+        },
+        {
+            path: '/iecharts',
+            name: '',
+            component: resolve => require(['../views/IEcharts'], resolve)
+        },
+        {
+            path: '/',
+            name: '',
+            component: resolve => require(['../components/QueryChart'], resolve)
+        },
+        {
+            path: '/hello',
+            name: 'Hello',
+            component: Hello
+        }
+    ]
 })

@@ -2,6 +2,7 @@
   <div id="app"><br/>
   路由列表：<br/>
   <router-link to='/'>Echarts</router-link><br/>
+  <router-link to='/iecharts'>IEcharts 原组件</router-link><br/>
   <router-link to='/hello'>hello页面</router-link><br/>
   <div>============以下是内容=============</div>
   <router-view></router-view>
@@ -10,7 +11,7 @@
 
 <script>
 export default {
-  name: 'app'
+    name: 'app'
 }
 </script>
 
