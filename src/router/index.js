@@ -20,7 +20,7 @@ export default new Router({
         {
             path: '/UseQueryChartComp',
             name: '',
-            component: resolve => require(['../views/UseQueryChartComp'], resolve)
+            component: resolve => require(['../views/UseInitEchartsComp'], resolve)
         },
         {
             path: '/',
