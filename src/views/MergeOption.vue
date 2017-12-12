@@ -1,9 +1,10 @@
 <template lang='pug'>
-    IEcharts(:option="option" :styles='styles' :resizable="true" :loading="chartLoading")
+    IEcharts(:option="mergedOption" :styles='styles' :resizable="true" :loading="chartLoading")
 </template>
 
 <script>
 import IEcharts from 'vue-echarts-v3/src/full'
+import merge from 'lodash/merge'
 
 export default {
     components: {
@@ -29,7 +30,7 @@ export default {
                 yAxis: [{
                     type: 'value',
                     axisLabel: {
-                        formatter: '{value}'
+                        formatter: '{value} %'
                     }
                 }],
                 series: [{
@@ -43,11 +44,17 @@ export default {
                     yAxisIndex: 0,
                     data: [3, 6]
                 }]
-            }
+            },
+            mergedOption: {}
         }
     },
     mounted () {
-
+        this.mergedOption = merge(this.chartInitOption, this.option)
+        console.log(this.mergedOption)
+        this.mergedOption.xAxis.data.push(3)
+        this.mergedOption.series[0].data.push(6)
+        this.mergedOption.series[1].data.push(8)
+        this.mergedOption.dataZoom = []
     },
     computed: {
 

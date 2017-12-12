@@ -10,17 +10,7 @@ export default new Router({
         {
             path: '/',
             name: '',
-            component: resolve => require(['../components/InitEcharts'], resolve)
-        },
-        {
-            path: '/iecharts',
-            name: '',
-            component: resolve => require(['../views/IEcharts'], resolve)
-        },
-        {
-            path: '/useinitechartscomp',
-            name: '',
-            component: resolve => require(['../views/UseInitEchartsComp'], resolve)
+            component: resolve => require(['../views/MergeOption'], resolve)
         },
         {
             path: '/hello',

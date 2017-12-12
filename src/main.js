@@ -5,8 +5,11 @@ import App from './App'
 import router from './router'
 
 import 'normalize.css'
+import Helpers from './helpers'
 
 Vue.config.productionTip = false
+
+Vue.use(Helpers)
 
 /* eslint-disable no-new */
 new Vue({
