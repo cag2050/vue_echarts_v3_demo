@@ -3,12 +3,12 @@
 </template>
 
 <script>
-import QueryChart from '../components/QueryChart'
+import InitEcharts from '../components/InitEcharts'
 
 export default {
     name: '',
     components: {
-        QueryChart
+        InitEcharts
     },
     data () {
         return {

@@ -10,7 +10,7 @@ export default new Router({
         {
             path: '/',
             name: '',
-            component: resolve => require(['../components/QueryChart'], resolve)
+            component: resolve => require(['../components/InitEcharts'], resolve)
         },
         {
             path: '/iecharts',
@@ -25,7 +25,7 @@ export default new Router({
         {
             path: '/',
             name: '',
-            component: resolve => require(['../components/QueryChart'], resolve)
+            component: resolve => require(['../components/InitEcharts'], resolve)
         },
         {
             path: '/hello',
