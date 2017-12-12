@@ -23,11 +23,6 @@ export default new Router({
             component: resolve => require(['../views/UseInitEchartsComp'], resolve)
         },
         {
-            path: '/',
-            name: '',
-            component: resolve => require(['../components/InitEcharts'], resolve)
-        },
-        {
             path: '/hello',
             name: 'Hello',
             component: Hello
