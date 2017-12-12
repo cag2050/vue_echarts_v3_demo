@@ -1,5 +1,5 @@
 <template lang='pug'>
-    QueryChart(:option='option' :loading='chartLoading' :styles='chartStyle')
+    InitEcharts(:option='option' :loading='chartLoading' :styles='chartStyle')
 </template>
 
 <script>
