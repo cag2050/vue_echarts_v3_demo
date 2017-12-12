@@ -1,5 +1,8 @@
 # vue_echarts_v3_demo
 
+* 通过 Vue.mixin 方式（注册全局混合对象），将echarts的默认option配置写成全局，具体页面通过lodash的merge方法合并option设置。
+
+
 > A Vue.js project
 
 ## Build Setup
