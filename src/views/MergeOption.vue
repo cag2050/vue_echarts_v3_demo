@@ -3,7 +3,12 @@
 </template>
 
 <script>
-import IEcharts from 'vue-echarts-v3/src/full'
+// import IEcharts from 'vue-echarts-v3/src/full'
+import IEcharts from 'vue-echarts-v3/src/lite'
+import 'echarts/lib/chart/line'
+import 'echarts/lib/component/grid'
+import 'echarts/lib/component/legend'
+import 'echarts/lib/component/tooltip'
 import merge from 'lodash/merge'
 
 export default {
