@@ -10,7 +10,7 @@ export default new Router({
         {
             path: '/',
             name: '',
-            component: resolve => require(['../views/MergeOption'], resolve)
+            component: resolve => require(['../views/EchartsMap'], resolve)
         },
         {
             path: '/hello',
