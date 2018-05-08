@@ -1,5 +1,7 @@
 # vue_echarts_v3_demo
 
+* 官方地址：https://github.com/xlsdg/vue-echarts-v3
+
 ### [vue-echarts-v3](https://github.com/xlsdg/vue-echarts-v3) 引入地图资源的2种方式：
 echarts 官方说明：http://echarts.baidu.com/option.html#geo.map
 * 1.js方式
