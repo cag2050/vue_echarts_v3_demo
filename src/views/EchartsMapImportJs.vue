@@ -1,9 +1,11 @@
 <template lang='pug'>
 #map.textLeft
-    div 引入地图js:
-    .fl(@click='returnChinaMap' v-show="mapOption.geo[0].map !== 'china'" style='color:red;margin-top:10px') 返回全国地图
-    .echarts.fl
-        IEcharts(:option="mapOption" theme="macarons" @click="clickChart")
+    div 引入地图js（全国地图和省份地图，分别有一个 IEcharts 实例；只有山东和安徽导入了数据，可以点击）:
+    .fl(@click='returnChinaMap' v-show='!showChinaMap' style='color:red;margin-top:10px') 返回全国地图
+    .echarts.fl(v-if='showChinaMap')
+        IEcharts(:option="chinaMapOption" theme="macarons" @click="clickChart")
+    .echarts.fl(v-if='!showChinaMap')
+        IEcharts(:option="provinceMapOption" theme="macarons")
 </template>
 
 <script>
@@ -21,7 +23,8 @@
         },
         data () {
             return {
-                mapOption: {
+                showChinaMap: true,
+                chinaMapOption: {
                     tooltip: {
                         trigger: 'item'
                         // formatter: '{b}'
@@ -56,12 +59,74 @@
                             }
                         }
                     }],
-                    calculable: true,
+                    // calculable: true,
                     series: [
                         {
                             name: '访问量统计',
                             type: 'map',
                             map: 'china',
+                            roam: false,
+                            label: {
+                                normal: {
+                                    show: true
+                                },
+                                emphasis: {
+                                    show: true
+                                }
+                            },
+                            data: [
+                                // { name: '北京', value: this.randomData() },
+                                // { name: '天津', value: this.randomData() },
+                                // { name: '上海', value: this.randomData() },
+                                // { name: '广东', value: this.randomData() },
+                                // { name: '台湾', value: this.randomData() },
+                                // { name: '香港', value: this.randomData() },
+                                // { name: '澳门', value: this.randomData() }
+                            ]
+                        }
+                    ]
+                },
+                provinceMapOption: {
+                    tooltip: {
+                        trigger: 'item'
+                        // formatter: '{b}'
+                    },
+                    legend: {
+                        orient: 'vertical',
+                        left: 'left'
+                    },
+                    visualMap: {
+                        min: 0,
+                        max: 1000,
+                        left: 'left',
+                        top: 'bottom',
+                        // text: ['高', '低'],
+                        calculable: true
+                    },
+                    geo: [{
+                        name: '地图',
+                        type: 'map',
+                        map: '',
+                        // map: 'anhui',
+                        roam: false,
+                        selectedMode: 'single',
+                        label: {
+                            normal: {
+                                show: false
+                            },
+                            emphasis: {
+                                label: {
+                                    show: true
+                                }
+                            }
+                        }
+                    }],
+                    calculable: true,
+                    series: [
+                        {
+                            name: '访问量统计',
+                            type: 'map',
+                            map: '',
                             roam: false,
                             label: {
                                 normal: {
@@ -102,19 +167,19 @@
                 // console.log(ECharts)
                 switch (event.name) {
                     case '安徽':
-                        this.mapOption.geo[0].map = '安徽'
-                        this.mapOption.series[0].map = '安徽'
+                        this.provinceMapOption.geo[0].map = '安徽'
+                        this.provinceMapOption.series[0].map = '安徽'
+                        this.showChinaMap = false
                         break
                     case '山东':
-                        this.mapOption.geo[0].map = '山东'
-                        this.mapOption.series[0].map = '山东'
+                        this.provinceMapOption.geo[0].map = '山东'
+                        this.provinceMapOption.series[0].map = '山东'
+                        this.showChinaMap = false
                         break
                 }
             },
             returnChinaMap () {
-                // location.reload()
-                this.mapOption.geo[0].map = 'china'
-                this.mapOption.series[0].map = 'china'
+                this.showChinaMap = true
             }
         }
     }
