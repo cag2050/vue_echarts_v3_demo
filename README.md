@@ -1,6 +1,7 @@
 # vue_echarts_v3_demo
 
 ### [vue-echarts-v3](https://github.com/xlsdg/vue-echarts-v3) 引入地图资源的2种方式：
+echarts 官方说明：http://echarts.baidu.com/option.html#geo.map
 1. js方式
 ```
     import 'echarts/map/js/china.js'
@@ -8,7 +9,7 @@
     import 'echarts/map/js/province/shandong.js'
 ```
 注意：以js方式引用省市自治区地图 map 值为简体中文，例如 beijing.js，map 值为’北京’。
-1. json方式
+2. json方式
 ```
     import IEcharts from 'vue-echarts-v3/src/full'
 
