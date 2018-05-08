@@ -1,6 +1,10 @@
 # vue_echarts_v3_demo
 
 * 官方地址：https://github.com/xlsdg/vue-echarts-v3
+* 全国到省份的地图下钻，2种引入地图方式：
+1. js引入方式，例子：src/views/EchartsMapImportJs.vue
+1. json引入方式，例子：src/views/EchartsMapImportJson.vue
+1. 说明：地图钻取，省份返回全国地图后，再次点击，事件获取的值不正确，详见issue：https://github.com/xlsdg/vue-echarts-v3/issues/94 ；因此，采用了权宜之计，点击"返回全国地图"时，直接用`location.reload()`来刷新页面。
 
 ### [vue-echarts-v3](https://github.com/xlsdg/vue-echarts-v3) 引入地图资源的2种方式：
 echarts 官方说明：http://echarts.baidu.com/option.html#geo.map
