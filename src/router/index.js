@@ -10,7 +10,12 @@ export default new Router({
         {
             path: '/',
             name: '',
-            component: resolve => require(['../views/EchartsMap'], resolve)
+            component: resolve => require(['../views/EchartsMapImportJs'], resolve)
+        },
+        {
+            path: '/map_json',
+            name: '',
+            component: resolve => require(['../views/EchartsMapImportJson'], resolve)
         },
         {
             path: '/hello',

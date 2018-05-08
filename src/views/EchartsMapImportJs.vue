@@ -1,18 +1,18 @@
 <template lang='pug'>
 #map.textLeft
+    div 引入地图js:
+    .fl(@click='returnChinaMap' v-show="mapOption.geo[0].map !== 'china'" style='color:red;margin-top:10px') 返回全国地图
     .echarts.fl
         IEcharts(:option="mapOption" theme="macarons" @click="clickChart")
-    .fl(@click='returnChinaMap' v-show="mapOption.geo[0].map !== 'china'") 返回全国地图
 </template>
 
 <script>
     import IEcharts from 'vue-echarts-v3/src/full'
     import 'echarts/theme/macarons.js'
-    // import 'echarts/map/js/china.js'
 
-    IEcharts.registerMap('china', require('echarts/map/json/china.json'))
-    IEcharts.registerMap('anhui', require('echarts/map/json/province/anhui.json'))
-    IEcharts.registerMap('shandong', require('echarts/map/json/province/shandong.json'))
+    import 'echarts/map/js/china.js'
+    import 'echarts/map/js/province/anhui.js'
+    import 'echarts/map/js/province/shandong.js'
 
     export default {
         name: '',
@@ -39,7 +39,7 @@
                         calculable: true
                     },
                     geo: [{
-                        name: '',
+                        name: '地图',
                         type: 'map',
                         map: 'china',
                         // map: 'anhui',
@@ -102,12 +102,12 @@
                 // console.log(ECharts)
                 switch (event.name) {
                     case '安徽':
-                        this.mapOption.geo[0].map = 'anhui'
-                        this.mapOption.series[0].map = 'anhui'
+                        this.mapOption.geo[0].map = '安徽'
+                        this.mapOption.series[0].map = '安徽'
                         break
                     case '山东':
-                        this.mapOption.geo[0].map = 'shandong'
-                        this.mapOption.series[0].map = 'shandong'
+                        this.mapOption.geo[0].map = '山东'
+                        this.mapOption.series[0].map = '山东'
                         break
                 }
             },
