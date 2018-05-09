@@ -3,7 +3,7 @@
     div 引入地图js（全国地图和省份地图，分别有一个 IEcharts 实例；只有山东和安徽导入了数据，可以点击）:
     .fl(@click='returnChinaMap' v-show='!showChinaMap' style='color:red;margin-top:10px') 返回全国地图
     .echarts.fl(v-if='showChinaMap')
-        IEcharts(:option="chinaMapOption" theme="macarons" @click="clickChart")
+        IEcharts(:option="chinaMapOption" theme="macarons" @click="clickMapChart")
     .echarts.fl(v-if='!showChinaMap')
         IEcharts(:option="provinceMapOption" theme="macarons")
 </template>
@@ -158,7 +158,7 @@
             randomData () {
                 return Math.round(Math.random() * 1000)
             },
-            clickChart (event, instance, ECharts) {
+            clickMapChart (event, instance, ECharts) {
                 console.log('event=')
                 console.log(event)
                 // console.log('instance=')
