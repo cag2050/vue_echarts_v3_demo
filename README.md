@@ -1,5 +1,7 @@
 # vue_echarts_v3_demo
 
+### 重要：发现有的版本，全国地图钻取到省份，返回全国地图后，再次点击，事件获取的值是正确的；待研究
+
 * 官方地址：https://github.com/xlsdg/vue-echarts-v3
 * 全国到省份的地图下钻，2种引入地图方式：
 1. js引入方式，例子：src/views/EchartsMapImportJs.vue
