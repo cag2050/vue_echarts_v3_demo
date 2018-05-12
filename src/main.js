@@ -6,8 +6,10 @@ import router from './router'
 
 import 'normalize.css'
 import Helpers from './helpers'
+import echarts from 'echarts'
 
 Vue.config.productionTip = false
+Vue.prototype.$echarts = echarts
 
 Vue.use(Helpers)
 
