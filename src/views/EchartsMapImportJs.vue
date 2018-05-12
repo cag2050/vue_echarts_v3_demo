@@ -181,8 +181,10 @@
             returnChinaMap () {
                 // 权宜之计：点击"返回全国地图"时，刷新页面
                 // 因为返回全国地图后，click事件无法获得event.name，这里采取刷新页面的方式来初始化页面。
-                location.reload()
-                // this.showChinaMap = true
+                // location.reload()
+                this.showChinaMap = true
+                this.mapOption.geo[0].map = 'china'
+                this.mapOption.series[0].map = 'china'
             }
         }
     }
