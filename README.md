@@ -2,6 +2,8 @@
 
 ### 重要（一个坑）：初次点击省份，都能获得正确的 event.name 值；点击"返回全国地图"后，只有赋值了的省份，点击时才能正确获得 event.name 值。
 
+### 这个例子，只实现省份钻取到地市，没有实现地市钻取到县级。
+
 * 官方地址：https://github.com/xlsdg/vue-echarts-v3
 * 全国到省份的地图下钻，2种引入地图方式：
 1. js引入方式，例子：src/views/EchartsMapImportJs.vue
@@ -26,7 +28,7 @@ echarts 官方说明：http://echarts.baidu.com/option.html#geo.map
     IEcharts.registerMap('山东', require('echarts/map/json/province/shandong.json'))
     IEcharts.registerMap('安徽', require('echarts/map/json/province/anhui.json'))
 ```
-json方式引入，需要注册下：`IEcharts.registerMap()`；建议注册名字时，直接写省份对应的汉字，这样就能和`event.name`的值对应起来。
+json方式引入，需要注册下：`IEcharts.registerMap()`；建议注册名字时，直接写省份对应的汉字，这样就能和点击地图时获得的`event.name`的值对应起来。
 
 * 注意：不管是js方式还是json方式引入，中国地图的map值为 ‘china’ ，世界地图的map值为 ‘world’。
 
