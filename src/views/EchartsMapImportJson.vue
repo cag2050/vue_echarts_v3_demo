@@ -1,6 +1,6 @@
 <template lang='pug'>
 #map.textLeft
-    div 引入地图json（全国地图和省份地图，公用一个 IEcharts 实例；只导入了山东和安徽2个省的地图json，因此只有这2个省点击后能进入市级地图；初次点击省份，都能获得正确的 event.name 值；点击"返回全国地图"后，只有赋值了的省份，点击时才能正确获得 event.name 值。）:
+    div 引入地图json（全国地图和省份地图，公用一个 IEcharts 实例；只导入了山东和安徽2个省的地图json，因此只有这2个省点击后能显示市级地图；初次点击省份，都能获得正确的 event.name 值；点击"返回全国地图"后，只有赋值了的省份，点击时才能正确获得 event.name 值。）:
     .fl(@click='returnChinaMap' v-show="mapOption.geo[0].map !== 'china'" style='color:red;margin-top:10px') 返回全国地图
     .echarts.fl
         IEcharts(:option="mapOption" theme="shine" @click="clickMapChart")
