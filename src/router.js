@@ -18,6 +18,11 @@ export default new Router({
             component: resolve => require(['./views/EchartsMapImportJson'], resolve)
         },
         {
+            path: '/graph',
+            name: '',
+            component: resolve => require(['./views/GraphDemo'], resolve)
+        },
+        {
             path: '/hello',
             name: 'Hello',
             component: Hello
